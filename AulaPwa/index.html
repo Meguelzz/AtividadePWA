@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>Aula PWA</title>
+</head>
+<body>
+    <h1>Jubileu Quer Pipoca</h1>
+    <p>Dê pipoca ao Jubileu</p>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker
+            .register("sw.js")
+            .then(() => console.log ("Service Worker registrado com sucesso!"))
+            .catch(err => console.error("Erro ao registrar Service Worker: " + err))
+        } else {
+            console.log("Service Worker não é suportado pelo seu navegador")
+        }
+    </script>
+</body>
+</html>
